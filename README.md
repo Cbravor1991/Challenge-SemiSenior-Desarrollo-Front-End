@@ -1,4 +1,4 @@
-# Prueba Técnica para Desarrollador Frontend
+# Prueba Técnica para Desarrollador Frontend (EN PROCESO DE RESOLUCIÓN)
 
 ## Instrucciones
 
