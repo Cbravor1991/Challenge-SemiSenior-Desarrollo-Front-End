@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Prueba Técnica para Desarrollador Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instrucciones
 
-## Available Scripts
+- **Duración:** 4 horas.
+- **Requisitos:** Implementa una aplicación de una sola página (SPA) utilizando React.
+- **Enfoque:** La aplicación debe consumir una API pública, mostrar los datos de manera organizada, y permitir la interacción del usuario con esos datos.
 
-In the project directory, you can run:
+## Requisitos de la Aplicación
 
-### `npm start`
+### Interfaz de Usuario
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Página Principal:**
+   - Crea una página principal que muestre una lista de elementos recuperados de una API pública (puedes usar [JSONPlaceholder](https://jsonplaceholder.typicode.com/), [The Dog API](https://thedogapi.com/), u otra API de tu elección).
+   - Cada elemento de la lista debe mostrar información clave como título, imagen (si está disponible), y una breve descripción.
+   - Permite al usuario hacer clic en un elemento para ver más detalles en una página de detalles.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Interacción del Usuario
 
-### `npm test`
+1. **Barra de Búsqueda:**
+   - Implementa una barra de búsqueda para filtrar los elementos mostrados en la lista principal.
+2. **Favoritos:**
+   - Permite al usuario marcar sus elementos favoritos y almacenar estos datos en el `localStorage`.
+   - Crea una sección separada donde el usuario pueda ver sus elementos favoritos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Estilizado
 
-### `npm run build`
+1. **Diseño Responsivo:**
+   - Usa CSS o una biblioteca de estilos como Material-UI, TailwindCSS, o styled-components para diseñar la aplicación.
+   - Asegúrate de que la aplicación sea responsive, funcionando correctamente en dispositivos móviles y de escritorio.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Manejo de Estado
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **React Hooks:**
+   - Utiliza React Hooks (`useState`, `useEffect`) para manejar el estado de la aplicación.
+2. **Manejo de Estado Global (Opcional):**
+   - Si te sientes cómodo, puedes utilizar una biblioteca de manejo de estado como Redux.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Extras Opcionales
 
-### `npm run eject`
+1. **Paginación:**
+   - Implementa paginación en la lista principal si la API lo soporta.
+2. **Animaciones:**
+   - Añade animaciones para mejorar la experiencia de usuario.
+3. **Manejo de Errores:**
+   - Implementa manejo de errores para cuando la API no esté disponible o los datos no se puedan cargar.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Entrega
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Repositorio GitHub:**
+   - Sube el código a un repositorio público de GitHub.
+2. **Instrucciones:**
+   - Incluye un archivo `README.md` con instrucciones para ejecutar el proyecto y cualquier otra información relevante.
+3. **Presentación:**
+   - Asegúrate de que el código esté bien organizado, comentado y con buenas prácticas de desarrollo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Evaluación
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Funcionalidad:** La aplicación cumple con los requisitos y permite la interacción del usuario.
+2. **Código:** Claridad, organización y uso adecuado de React y otras tecnologías.
+3. **Diseño:** Estética, usabilidad y responsive design.
+4. **Extras:** Implementación de funcionalidades adicionales como paginación, animaciones, y manejo de errores.
