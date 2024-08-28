@@ -4,15 +4,27 @@ import { Button } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { CustomDialog } from './CustomDialog';
+import CustomDialog, { dialogOpenSubject$ } from './CustomDialog/CustomDialog';
+import { useSelector } from 'react-redux';
+import {FavoriteTable} from './FavoriteTable';
 
 function ResponsiveAppBar() {
+
+  useSelector ((state)=> state.favorites);
+  const handleClick = () => {
+
+    dialogOpenSubject$.setSubject = true;
+}
+
+
   return (
+    <>
+    <CustomDialog>
+    <FavoriteTable/>
+    </CustomDialog>
     <AppBar position="static" sx={{ backgroundColor: 'black' }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-     
-          
+        <Toolbar disableGutters>                
             <Typography
               variant="h6"
               noWrap
@@ -40,12 +52,13 @@ function ResponsiveAppBar() {
             </Typography>
        
     
-          <Button variant="contained" sx={{ backgroundColor: '#1DB954',  cursor: 'pointer',
+          <Button variant="contained" onClick = {handleClick} sx={{ backgroundColor: '#1DB954',  cursor: 'pointer',
                 transition: 'background-color 0.3s',
                 '&:hover': {
                   backgroundColor: '#17a94a',
                 },
-                marginLeft: 'auto' }}>
+                marginLeft: 'auto' }}
+                >
               VER FAVORITOS
             </Button>
        
@@ -54,6 +67,7 @@ function ResponsiveAppBar() {
       </Container>
       
     </AppBar>
+    </>
   );
 }
 

@@ -29,7 +29,8 @@ export const CustomDialog = ({ children }) => {
   };
 
   const handleExit = () => {
-    dialogCloseSubject$.setSubject(false);
+
+    dialogCloseSubject$.setSubject = false; 
   };
 
   return (
