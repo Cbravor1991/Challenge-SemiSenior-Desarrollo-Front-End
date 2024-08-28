@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite } from '../../../redux/states'
-import { Checkbox } from '@mui/material';
+import { Checkbox, Button } from '@mui/material';
 
 
 const PostTable = () => {
@@ -37,8 +37,14 @@ const PostTable = () => {
      dispatch(addFavorite(filteredPosts));
      
     setSelectedPosts(filteredPosts);
- 
-  };
+ };
+
+ const handleClick = () => {
+  console.log("HOLA MUNDO");
+}
+
+
+
  const columns = [
   {
     field: 'select', headerName: '', width: 120,
@@ -50,11 +56,24 @@ const PostTable = () => {
       />
     )
   },
-    { field: 'id', headerName: 'ID', width: 90 },
-    { field: 'title', headerName: 'Title', width: 150 },
+    { field: 'id', headerName: 'ID', width: 90, renderCell: (params) => (
+      <Button variant="text" onClick={handleClick}    sx={{ padding: 0, minWidth: 'auto', color: 'black', fontFamily: 'Comic Sans MS, cursive' }}>
+        {params.value}
+      </Button>
+    ) },
+    { field: 'title', headerName: 'Title', width: 700, renderCell: (params) => (
+      <Button variant="text" onClick={handleClick}    sx={{ padding: 0, maWidth: 'auto', color: 'black', fontFamily: 'Comic Sans MS, cursive' }}>
+        {params.value}
+      </Button>  ) },
     { field: 'completed', headerName: 'Completed', width: 150,
       renderCell: (params) => (
-        params.value ? 'Sí' : 'No' 
+        <Button
+        variant="text"
+        onClick={handleClick}
+        sx={{ padding: 0, minWidth: 'auto', color: 'black', fontFamily: 'Comic Sans MS, cursive' }}
+      >
+        {params.value ? 'Yes' : 'No'}
+      </Button>
       )
     },
   
@@ -63,7 +82,7 @@ const PostTable = () => {
   return (
     <Box   sx={{
       width: '80%', 
-      maxWidth: '520px', 
+      maxWidth: '1200px', 
       margin: '0 auto', 
       height: 400,
       display: 'flex',

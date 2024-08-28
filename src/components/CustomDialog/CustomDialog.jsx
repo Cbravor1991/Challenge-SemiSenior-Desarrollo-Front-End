@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Dialog from '@mui/material/Dialog';
-import { SubjectManager } from '../../../models';
+import { SubjectManager } from '../../models';
 import { Subscription } from 'rxjs';
 
 export const dialogOpenSubject$ = new SubjectManager();
@@ -35,15 +35,22 @@ export const CustomDialog = ({ children }) => {
 
   return (
     <div>
-      <Dialog
-        open={open}
-        onClose={() => handleExit()}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        fullWidth
-      >
-        {children}
-      </Dialog>
+       <Dialog
+      open={open}
+      onClose={() => handleExit()}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+      sx={{
+        '& .MuiDialog-paper': {
+          width: 'auto',
+          maxWidth: 'none',
+        },
+      }}
+      maxWidth="md"
+      fullWidth
+    >
+      {children}
+    </Dialog>
     </div>
   );
 };
