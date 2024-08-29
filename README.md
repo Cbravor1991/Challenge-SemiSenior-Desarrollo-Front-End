@@ -1,4 +1,51 @@
-# Prueba Técnica para Desarrollador Frontend (EN PROCESO DE RESOLUCIÓN)
+# Prueba Técnica para Desarrollador Frontend  SemiSenior
+
+## Consigna 
+La consigna esta al final del documento, clickea [aquí](#instrucciones) para ir.
+
+## Como ejecutar la solución
+- Clonar este repositorio
+- Ejecutar dentro del proyecto **npm install**
+- Luego de instalado de que se instalan las dependencias
+ejecutar **npm start**
+
+
+## Solución implementada
+
+**Cargar los datos desde [JSONPlaceholder](https://jsonplaceholder.typicode.com/)**
+
+Se cargan los datos de la API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/),
+se utiliza Redux para guardar los datos de los posts levantados en local storage, y disponer
+de los mismos. Se utiliza un componente Data Grid de la biblioteca mui, para mostrar los datos
+y paginar los mismos, este componente también brinda la posibilidad de ordenar la tabla y filtrar
+la misma por un dato determinado con una barra de búsqueda.
+
+![Pantalla inicial](./imagenes/foto_2.png)
+![Pantalla inicial](./imagenes/foto_1.png)
+
+
+**Seleccionar favoritos**
+
+A través de los check se agregan los posts a la sección de favoritos, esto también se hace utilizando redux,
+que agrega los mismos a una variable de LocalStorage. Para ver a los favoritos se utiliza un modal (ventana
+emergente), donde se ven todos los favoritos seleccionados los mismos se toman de la variable localStorage
+con los favoritos agregados. Si se quita el check de los post de favoritos, los mismos se quitan de la
+variable favoritos de localStorage y ya no se verían en la sección de favoritos 
+
+
+![Favoritos](./imagenes/foto_3.png)
+![Favorito](./imagenes/foto_4.png)
+
+**Ver información detallada de los posts**
+
+Para ver la información de los posts, se puede clickear sobre el id, el titulo o la columna de completado
+y se abrirá nuevamente una ventana emergente con la información del post seleccionado. Para hacer esto
+se agrego la información de la fila seleccionada a una variable localStorage, directamente ya que
+algo tan simple no amerita agregar una nueva sección a Redux y para agregar la funcionalidad para que se abra la ventana emergente se agrego un botón a cada elemento de la columna y se aplico el css, con sx por que el boton es parte del material ofrecido por la biblioteca de mui.
+
+
+![Detalle](./imagenes/foto_5.png)
+
 
 ## Instrucciones
 

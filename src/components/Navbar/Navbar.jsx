@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import CustomDialog, { dialogOpenSubject$ } from '../CustomDialog/CustomDialog';
+import CustomDialog, { dialogOpenSubject$ } from './CustomDialog/CustomDialog';
 import { useSelector } from 'react-redux';
 import {FavoriteTable} from './FavoriteTable';
 

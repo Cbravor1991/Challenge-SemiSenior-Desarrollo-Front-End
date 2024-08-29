@@ -5,6 +5,9 @@ import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite } from '../../../redux/states'
 import { Checkbox, Button } from '@mui/material';
+import CustomDialog, { dialogOpenSubject$ } from './CustomDialogHome'
+import PageDetail from './Pagedetail';
+
 
 
 const PostTable = () => {
@@ -39,8 +42,9 @@ const PostTable = () => {
     setSelectedPosts(filteredPosts);
  };
 
- const handleClick = () => {
-  console.log("HOLA MUNDO");
+ const handleClick = (row) => {
+  window.localStorage.setItem('selectedPost', JSON.stringify(row));
+  dialogOpenSubject$.setSubject = true;
 }
 
 
@@ -57,19 +61,19 @@ const PostTable = () => {
     )
   },
     { field: 'id', headerName: 'ID', width: 90, renderCell: (params) => (
-      <Button variant="text" onClick={handleClick}    sx={{ padding: 0, minWidth: 'auto', color: 'black', fontFamily: 'Comic Sans MS, cursive' }}>
+      <Button variant="text" onClick={() => handleClick(params.row)}    sx={{ padding: 0, minWidth: 'auto', color: 'black', fontFamily: 'Comic Sans MS, cursive' }}>
         {params.value}
       </Button>
     ) },
     { field: 'title', headerName: 'Title', width: 700, renderCell: (params) => (
-      <Button variant="text" onClick={handleClick}    sx={{ padding: 0, maWidth: 'auto', color: 'black', fontFamily: 'Comic Sans MS, cursive' }}>
+      <Button variant="text" onClick={() => handleClick(params.row)}    sx={{ padding: 0, maWidth: 'auto', color: 'black', fontFamily: 'Comic Sans MS, cursive' }}>
         {params.value}
       </Button>  ) },
     { field: 'completed', headerName: 'Completed', width: 150,
       renderCell: (params) => (
         <Button
         variant="text"
-        onClick={handleClick}
+        onClick={() => handleClick(params.row)} 
         sx={{ padding: 0, minWidth: 'auto', color: 'black', fontFamily: 'Comic Sans MS, cursive' }}
       >
         {params.value ? 'Yes' : 'No'}
@@ -80,6 +84,10 @@ const PostTable = () => {
   ];
 
   return (
+    <>
+    <CustomDialog>
+    <PageDetail/>
+    </CustomDialog>
     <Box   sx={{
       width: '80%', 
       maxWidth: '1200px', 
@@ -113,6 +121,7 @@ const PostTable = () => {
     
       />
     </Box>
+    </>
   );
 };
 

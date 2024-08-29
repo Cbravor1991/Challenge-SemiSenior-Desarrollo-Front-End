@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Dialog from '@mui/material/Dialog';
-import { SubjectManager } from '../../models';
+import { SubjectManager } from '../../../models';
 import { Subscription } from 'rxjs';
 
 export const dialogOpenSubject$ = new SubjectManager();
